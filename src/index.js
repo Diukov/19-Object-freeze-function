@@ -27,7 +27,6 @@ const family = {
 function deepFreeze(obj) {
   for (const key in obj) {
     if (obj[key] !== null && typeof obj[key] === "object") {
-      console.log(obj[key])
       deepFreeze(obj[key])
     }
   }
