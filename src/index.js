@@ -21,12 +21,13 @@ const family = {
     name: "Barsik",
     age: 2,
     nationality: "cat"
-  }
+  },
 };
 
 function deepFreeze(obj) {
   for (const key in obj) {
-    if (typeof (obj[key]) === "object") {
+    if (obj[key] !== null && typeof obj[key] === "object") {
+      console.log(obj[key])
       deepFreeze(obj[key])
     }
   }
